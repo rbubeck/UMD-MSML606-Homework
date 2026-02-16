@@ -92,12 +92,12 @@ class HomeWork2:
 
     def postfixNotationPrint(self, head: TreeNode) -> list:
         traversal = []
-        if head.left:
-            traversal.extend(postfixNotationPrint(head.left)
-        else:
+        if head:
+            if head.left:
+                traversal.extend(postfixNotationPrint(head.left)
+            if head.right:
+                traversal.extend(postfixNotationPrint(head.right)
             traversal.append(head.val)
-        if head.right:
-            traversal.extend(postfixNotationPrint(head.right)
             
         return traversal
         pass
