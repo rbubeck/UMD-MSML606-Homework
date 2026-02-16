@@ -91,6 +91,15 @@ class HomeWork2:
     # you can see the examples in p2_traversals.csv
 
     def postfixNotationPrint(self, head: TreeNode) -> list:
+        traversal = []
+        if head.left:
+            traversal.extend(postfixNotationPrint(head.left)
+        else:
+            traversal.append(head.val)
+        if head.right:
+            traversal.extend(postfixNotationPrint(head.right)
+            
+        return traversal
         pass
 
 
