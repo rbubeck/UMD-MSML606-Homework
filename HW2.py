@@ -132,6 +132,28 @@ class Stack:
 
     def evaluatePostfix(exp: str) -> int:
         # TODO: implement this using your Stack class
+        operators = ["+","-","*","/"]
+        stack = Stack()
+        for elt in exp:
+            if elt != " ":
+                if elt not in operators:
+                    stack.append(elt)
+                elif elt in operators:
+                    second = stack.pop()
+                    first = stack.pop()
+                    if elt == "+":
+                        new = int(first) + int(second)
+                    elif elt == "-":
+                        new = int(first) - int(second)
+                    elif elt == "*":
+                        new = int(first) * int(second)
+                    elif elt == "/":
+                        if second != 0:
+                            new = int(first) / int(second)
+                        else:
+                            return "Error: Can't divide by zero"
+                    stack.append(new)
+        return stack
         pass
 
 
