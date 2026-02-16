@@ -94,9 +94,9 @@ class HomeWork2:
         traversal = []
         if head:
             if head.left:
-                traversal.extend(postfixNotationPrint(head.left)
+                traversal.extend(postfixNotationPrint(head.left))
             if head.right:
-                traversal.extend(postfixNotationPrint(head.right)
+                traversal.extend(postfixNotationPrint(head.right))
             traversal.append(head.val)
             
         return traversal
