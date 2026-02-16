@@ -71,6 +71,16 @@ class HomeWork2:
     # treat parentheses as individual elements in the returned list (see output)
 
     def infixNotationPrint(self, head: TreeNode) -> list:
+        traversal = []
+        traversal.append("(")
+        if head.left:
+            traversal.extend(self.infixNotationPrint(head.left))
+        else: 
+            traversal.append(head.val)
+            if head.right:
+                traversal.append(head.right)
+        
+        return traversal
         pass
 
 
