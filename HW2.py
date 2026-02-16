@@ -37,7 +37,7 @@ class HomeWork2:
                 node.right = right
                 stack.append(node)
         print("Complete tree:", stack)
-        return stack[0]
+        return stack[-1]
                 
         pass
 
