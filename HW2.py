@@ -112,9 +112,9 @@ class Stack:
     
     # Use your own stack implementation to solve problem 3
 
-    def __init__(self,stack=[]):
+    def __init__(self,stack=None):
         # TODO: initialize the stack
-        self.stack = stack
+        self.stack = [] if stack is None else stack
         pass
 
     # Problem 3: Write code to evaluate a postfix expression using stack and return the integer value
@@ -133,14 +133,13 @@ class Stack:
     def evaluatePostfix(exp: str) -> int:
         # TODO: implement this using your Stack class
         operators = ["+","-","*","/"]
-        stack = Stack()
         for elt in exp:
             if elt != " ":
                 if elt not in operators:
-                    stack.append(elt)
+                    self.stack.append(elt)
                 elif elt in operators:
-                    second = stack.pop()
-                    first = stack.pop()
+                    second = self.stack.pop()
+                    first = self.stack.pop()
                     if elt == "+":
                         new = int(first) + int(second)
                     elif elt == "-":
@@ -152,8 +151,8 @@ class Stack:
                             new = int(first) / int(second)
                         else:
                             return "Error: Can't divide by zero"
-                    stack.append(new)
-        return stack
+                    self.stack.append(new)
+        return self.stack
         pass
 
 
