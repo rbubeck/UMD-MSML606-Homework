@@ -152,7 +152,8 @@ class Stack:
                         else:
                             return "Error: Can't divide by zero"
                     self.stack.append(new)
-        return self.stack
+        results = self.stack
+        return result
         pass
 
 
