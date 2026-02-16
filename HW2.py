@@ -48,6 +48,24 @@ class HomeWork2:
     # you can see the examples in p2_traversals.csv
 
     def prefixNotationPrint(self, head: TreeNode) -> list:
+        traversal = []
+        traversal.append(head.val)
+        if head.left != None:
+            left = head.left
+            traversal.append(left)
+            if left.left != None:
+                traversal.append(left.left)
+            if left.right != None:
+                traversal.append(left.right)
+        if head.right != None:
+            right = head.right
+            traversal.append(right)
+            if right.left != None:
+                traversal.append(right.left)
+            if right.right != None:
+                traversal.append(right.right)
+
+        return traversal
         pass
 
     # Problem 2.2: Use in-order traversal (left, root, right) for infix notation with appropriate parentheses.
