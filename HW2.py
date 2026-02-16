@@ -112,8 +112,9 @@ class Stack:
     
     # Use your own stack implementation to solve problem 3
 
-    def __init__(self):
+    def __init__(self,stack=[]):
         # TODO: initialize the stack
+        self.stack = stack
         pass
 
     # Problem 3: Write code to evaluate a postfix expression using stack and return the integer value
