@@ -49,21 +49,14 @@ class HomeWork2:
 
     def prefixNotationPrint(self, head: TreeNode) -> list:
         traversal = []
-        traversal.append(head.val)
-        if head.left != None:
-            left = head.left
-            traversal.append(left)
-            if left.left != None:
-                traversal.append(left.left)
-            if left.right != None:
-                traversal.append(left.right)
-        if head.right != None:
-            right = head.right
-            traversal.append(right)
-            if right.left != None:
-                traversal.append(right.left)
-            if right.right != None:
-                traversal.append(right.right)
+        if head:
+            traversal.append(head.val)
+            if head.left:
+                left = head.left
+                traversal.extend(self.prefixNotationPrint(left))
+            if head.right:
+                right = head.right
+                traversal.extend(self.prefixNotationPrint(right))
 
         return traversal
         pass
