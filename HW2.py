@@ -103,7 +103,7 @@ if __name__ == "__main__":
 
     for i, (postfix_input,) in enumerate(testcases, 1):
         postfix = postfix_input.split(",")
-
+        print(postfix)
         root = homework2.constructBinaryTree(postfix)
         output = homework2.postfixNotationPrint(root)
 
