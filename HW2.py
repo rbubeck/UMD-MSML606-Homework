@@ -24,6 +24,21 @@ class HomeWork2:
     #     3   4
 
     def constructBinaryTree(self, input) -> TreeNode:
+        stack = []
+        operators = ['+','-','*','/']
+        for elt in input:
+            if elt not in operators:
+                stack.append(TreeNode(elt))
+            elif elt in operators:
+                right = stack.pop()
+                left = stack.pop()
+                node = TreeNode(elt)
+                node.left = left
+                node.right = right
+                stack.append(node)
+        print("Complete tree:", stack)
+        return stack[0]
+                
         pass
 
 
