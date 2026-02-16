@@ -72,13 +72,14 @@ class HomeWork2:
 
     def infixNotationPrint(self, head: TreeNode) -> list:
         traversal = []
-        traversal.append("(")
-        if head.left:
+        if head.left and head.right:
+            traversal.append("(")
             traversal.extend(self.infixNotationPrint(head.left))
+            traversal.append(head.val)
+            traversal.extend(self.infixNotationPrint(head.right))
+            traversal.append(")")
         else: 
             traversal.append(head.val)
-            if head.right:
-                traversal.append(head.right)
         
         return traversal
         pass
