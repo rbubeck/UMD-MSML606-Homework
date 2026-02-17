@@ -150,12 +150,24 @@ class Stack:
                         if second != 0:
                             new = int(first) / int(second)
                         else:
-                            return "Error: Can't divide by zero"
+                            result = "Error: Can't divide by zero"
+                            return result
                     self.stack.append(new)
-        results = self.stack
+        result = self.stack
+        if len(result) > 1:
+            result = "Error: not enough operators"
         return result
         pass
 
+# Problem 4: Handling Edge Cases
+# 1. Empty postfix expressions: The evaluatePostFix function will return an empty list, since self.stack is initialized as an empty list.
+# 2. Malformed postfix expressions: If there's not enough operators and the stack has more than one value, the evaluatePostFix function will return an error statement.
+#    If there's too many operators, the function will stop running and result in an error since you can't do mathematical operations on operators.
+# 3. Division by zero: The evaluatePostFix function returns an error statement when trying to divide by zero.
+# 4. Invalid tokens: If there's a non-numeric operand, the evaluatePostFix function will stop running and produce an error, since non-numeric operands can't be transformed into integers.
+#    If there's an unsupported operator, it gets skipped over in the for loop since it is not in the specified list of operators.
+# 5. Very large numbers or results: These values are still able to be calculated and stored in the stack and returned by the evaluatePostFix function.
+# 6. Negative numbers in the expression: These values are still able to have mathematical operations performed on them since the int() function converts them to a negative integer.
 
 # Main Function. Do not edit the code below
 if __name__ == "__main__":
