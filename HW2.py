@@ -130,7 +130,7 @@ class Stack:
 
     # DO NOT USE EVAL function for evaluating the expression
 
-    def evaluatePostfix(exp: str) -> int:
+    def evaluatePostfix(self, exp: str) -> int:
         # TODO: implement this using your Stack class
         operators = ["+","-","*","/"]
         for elt in exp:
@@ -156,7 +156,7 @@ class Stack:
         result = self.stack
         if len(result) > 1:
             result = "Error: not enough operators"
-        return result
+        return result[0]
         pass
 
 # Problem 4: Handling Edge Cases
