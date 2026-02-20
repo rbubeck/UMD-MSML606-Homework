@@ -136,26 +136,26 @@ class Stack:
     def evaluatePostfix(self, exp: str) -> int:
         # TODO: implement this using your Stack class
         operators = ["+","-","*","/"]
+        exp = exp.split()
         for elt in exp:
-            if elt != " ":
-                if elt not in operators:
-                    self.stack.append(elt)
-                elif elt in operators:
-                    second = self.stack.pop()
-                    first = self.stack.pop()
-                    if elt == "+":
-                        new = int(first) + int(second)
-                    elif elt == "-":
-                        new = int(first) - int(second)
-                    elif elt == "*":
-                        new = int(first) * int(second)
-                    elif elt == "/":
-                        if second != 0:
-                            new = int(first) / int(second)
-                        else:
-                            result = "Error: Can't divide by zero"
-                            return result
-                    self.stack.append(new)
+            if elt not in operators:
+                self.stack.append(elt)
+            elif elt in operators:
+                second = self.stack.pop()
+                first = self.stack.pop()
+                if elt == "+":
+                    new = int(first) + int(second)
+                elif elt == "-":
+                    new = int(first) - int(second)
+                elif elt == "*":
+                    new = int(first) * int(second)
+                elif elt == "/":
+                    if second != 0:
+                        new = int(first) / int(second)
+                    elif second == 0:
+                        result = "Error: Can't divide by zero"
+                        return result
+                self.stack.append(new)
         result = self.stack
         if len(result) > 1:
             result = "Error: not enough operators"
