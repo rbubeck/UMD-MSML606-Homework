@@ -1,3 +1,6 @@
+# AI Statement: Used AI to learn how to construct and solve expression trees with numerical operators by hand.
+# Used AI to relearn how to use Classes in Python.
+
 import csv
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
